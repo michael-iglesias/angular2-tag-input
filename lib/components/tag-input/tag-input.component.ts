@@ -53,7 +53,6 @@ export interface AutoCompleteItem {
       font-size: 16px;
       display: block;
       padding: 8px 0 6px 0;
-      width: 150px;
     }
 
      :host .ng2-tag-input-form {
