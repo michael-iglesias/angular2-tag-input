@@ -26,7 +26,7 @@ import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/co
     }
 
      :host .ng2-tag-input-remove {
-      background: #a6a6a6;
+      background: #4990E2;
       border-radius: 50%;
       color: #e0e0e0;
       cursor: pointer;
