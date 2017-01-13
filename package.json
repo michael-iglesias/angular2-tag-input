@@ -1,6 +1,6 @@
 {
-  "name": "angular2-tag-input",
-  "version": "1.2.1",
+  "name": "angular2-tag-input-k",
+  "version": "1.0.0",
   "description": "Tag input component for Angular 2",
   "main": "dist/index.js",
   "keywords": [
@@ -13,7 +13,9 @@
   ],
   "scripts": {
     "clean": "./node_modules/.bin/rimraf ./dist/",
+    "package": "npm run clean && npm run build",
     "package:aot": "npm run clean && npm run build:aot",
+    "build": "./node_modules/.bin/ngc -p tsconfig.json",
     "build:aot": "./node_modules/.bin/ngc -p tsconfig-aot.json",
     "serve": "webpack-dev-server --config config/webpack.dev.js --progress --profile --watch --content-base demo/",
     "lint": "tslint lib/**.*.ts"

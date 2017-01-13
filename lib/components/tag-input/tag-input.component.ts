@@ -18,14 +18,7 @@ export interface AutoCompleteItem {
 @Component({
   selector: 'rl-tag-input',
   template: `
-    <rl-tag-input-item
-      [text]="tag"
-      [index]="index"
-      [selected]="selectedTag === index"
-      (tagRemoved)="_removeTag($event)"
-      *ngFor="let tag of tagsList; let index = index">
-    </rl-tag-input-item>
-    <form [formGroup]="tagInputForm" class="ng2-tag-input-form">
+    <form [formGroup]="tagInputForm" class="ng2-tag-input-form {{formClasses.join(' ')}}">
       <input
         class="ng2-tag-input-field"
         type="text"
@@ -36,7 +29,7 @@ export interface AutoCompleteItem {
         (blur)="onInputBlurred($event)"
         (focus)="onInputFocused()">
 
-      <div *ngIf="showAutocomplete()" class="rl-tag-input-autocomplete-container">
+      <div *ngIf="showAutocomplete()" class="rl-tag-input-autocomplete-container {{autoCompleteListClasses.join(' ')}}">
         <rl-tag-input-autocomplete
           [items]="autocompleteResults"
           [selectFirstItem]="autocompleteSelectFirstItem"
@@ -45,6 +38,14 @@ export interface AutoCompleteItem {
         </rl-tag-input-autocomplete>
       </div>
     </form>
+    <rl-tag-input-item
+      [classes]="inputItemClasses"
+      [text]="tag"
+      [index]="index"
+      [selected]="selectedTag === index"
+      (tagRemoved)="_removeTag($event)"
+      *ngFor="let tag of tagsList; let index = index">
+    </rl-tag-input-item>
   `,
   styles: [`
     :host {
@@ -103,6 +104,9 @@ export class TagInputComponent implements ControlValueAccessor, OnDestroy, OnIni
   @Input() autocompleteSelectFirstItem: boolean = true;
   @Input() pasteSplitPattern: string = ',';
   @Input() placeholder: string = 'Add a tag';
+  @Input() inputItemClasses: Array<String> = [];
+  @Input() formClasses: Array<String> = [];
+  @Input() autoCompleteListClasses: Array<String> = [];
   @Output('addTag') addTag: EventEmitter<string> = new EventEmitter<string>();
   @Output('removeTag') removeTag: EventEmitter<string> = new EventEmitter<string>();
 
