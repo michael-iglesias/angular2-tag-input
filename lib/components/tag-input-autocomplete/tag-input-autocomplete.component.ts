@@ -20,12 +20,13 @@ import { KEYS } from '../../shared/tag-input-keys';
       box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
       display: block;
       position: absolute;
-      top: 100%;
+      top: 0;
       font-family: "Roboto", "Helvetica Neue", sans-serif;
       font-size: 16px;
       color: #444444;
       background: white;
       padding: 8px 0;
+      width: 150px;
     }
 
      :host .rl-autocomplete-item {

@@ -52,10 +52,8 @@ export interface AutoCompleteItem {
       font-family: "Roboto", "Helvetica Neue", sans-serif;
       font-size: 16px;
       display: block;
-      box-shadow: 0 1px #ccc;
       padding: 8px 0 6px 0;
-      will-change: box-shadow;
-      transition: box-shadow 0.12s ease-out;
+      width: 150px;
     }
 
      :host .ng2-tag-input-form {
