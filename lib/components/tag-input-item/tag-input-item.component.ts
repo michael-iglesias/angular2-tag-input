@@ -3,10 +3,13 @@ import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/co
 @Component({
   selector: 'rl-tag-input-item',
   template: `
-    {{text}}
-    <span
-    class="ng2-tag-input-remove"
-    (click)="removeTag()">&times;</span>
+    <div class="{{classes.join(' ')}}">
+      {{text}}
+      <span
+      class="ng2-tag-input-remove"
+      (click)="removeTag()">&times;</span>
+    </div>
+
   `,
   styles: [`
     :host {
@@ -15,7 +18,7 @@ import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/co
       height: 32px;
       line-height: 32px;
       display: inline-block;
-      background: #e0e0e0;
+      background: #fff;
       padding: 0 12px;
       border-radius: 90px;
       margin-right: 10px;
