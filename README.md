@@ -22,6 +22,14 @@ export class YourModule {}
 
 // In one of your component templates
 <rl-tag-input [(ngModel)]="tags" placeholder="Testing placeholder"></rl-tag-input>
+
+<rl-tag-input [(ngModel)]="tags"
+placeholder="Testing placeholder"
+[inputItemClasses]="['foo', 'foo2']"
+[formClasses]="['foo', 'foo2']"
+[autoCompleteListClasses]="['foo', 'foo2']"
+></rl-tag-input>
+
 ```
 
 ## API
