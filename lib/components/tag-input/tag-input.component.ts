@@ -20,7 +20,7 @@ export interface AutoCompleteItem {
   template: `
     <form [formGroup]="tagInputForm" class="ng2-tag-input-form {{formClasses.join(' ')}}">
       <input
-        class="ng2-tag-input-field"
+        class="ng2-tag-input-field form-control"
         type="text"
         formControlName="tagInputField"
         [placeholder]="placeholder"
@@ -79,10 +79,6 @@ export interface AutoCompleteItem {
      :host .rl-tag-input-autocomplete-container {
       position: relative;
       z-index: 10;
-    }
-
-    :host.ng2-tag-input-focus {
-      box-shadow: 0 2px #0d8bff;
     }
   `],
   providers: [
